@@ -15,11 +15,11 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <>
       <Header></Header>
       <PokemonListing></PokemonListing>
       <Footer></Footer>
-    </div>
+    </>
   );
 }
 

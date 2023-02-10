@@ -1,0 +1,26 @@
+@import "../../common/colors.scss";
+
+.header {
+  padding: 30px;
+  background-color: $primary-color;
+  max-width: 100vw;
+
+  h2 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 40px;
+  }
+
+  input {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
