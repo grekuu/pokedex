@@ -1,11 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "./store";
 
-export interface PokemonsType {}
+interface PokemonName {
+  english: string;
+  japanese: string;
+  chinese: string;
+  french: string;
+}
+
+interface PokemonBaseStats {
+  HP: number;
+  Attack: number;
+  Defense: number;
+  "Sp. Attack": number;
+  "Sp. Defense": number;
+  Speed: number;
+}
+
+interface Pokemon {
+  id: number;
+  name: PokemonName;
+  type: string[];
+  base: PokemonBaseStats;
+}
 
 interface PokemonsState {
-  pokemons: PokemonsType[];
+  pokemons: Pokemon[];
 }
 
 const initialState: PokemonsState = {
@@ -16,8 +36,8 @@ export const counterSlice = createSlice({
   name: "pokemons",
   initialState,
   reducers: {
-    addPokemons: (state, action: PayloadAction<PokemonsType>) => {
-      state.pokemons.push(action.payload);
+    addPokemons: (state, { payload }) => {
+      state.pokemons.push(payload);
     },
   },
 });
