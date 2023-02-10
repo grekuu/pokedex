@@ -1,7 +1,7 @@
 import "./index.scss";
 
 function App() {
-  return <div></div>;
+  return <div>gfaga</div>;
 }
 
 export default App;
