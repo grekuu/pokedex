@@ -5,14 +5,10 @@ import PokemonListing from "./components/PokemonListing/PokemonListing";
 import "./index.scss";
 import { useAppDispatch } from "./redux/hooks";
 import { addPokemons } from "./redux/pokemonsSlice";
-import data from "./assets/pokedex.json";
+import data from "./pokedex.json";
 
 function App() {
   const dispatch = useAppDispatch();
-
-  // useEffect(() => {
-
-  // }, []);
 
   let initialized = false;
 
