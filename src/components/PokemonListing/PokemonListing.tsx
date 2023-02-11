@@ -10,7 +10,6 @@ const PokemonListing = () => {
   const flatPokemons = pokemons.flat();
 
   console.log(flatPokemons);
-  // console.log(pokemons);
 
   return (
     <div className="pokemon-listing-container">
