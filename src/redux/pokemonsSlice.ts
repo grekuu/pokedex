@@ -17,7 +17,7 @@ interface PokemonBaseStats {
   Speed: number;
 }
 
-interface Pokemon {
+export interface Pokemon {
   id: number;
   name: PokemonName;
   type: string[];

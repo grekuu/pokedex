@@ -1,4 +1,6 @@
 import React from "react";
+import { useAppSelector } from "../../redux/hooks";
+import { getAllPokemons } from "../../redux/pokemonsSlice";
 import "./header.scss";
 
 const Header = () => {

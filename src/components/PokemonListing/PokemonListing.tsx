@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppSelector } from "../../redux/hooks";
-import { getAllPokemons } from "../../redux/pokemonsSlice";
+import { getAllPokemons, Pokemon } from "../../redux/pokemonsSlice";
+import PokemonCard from "../PokemonCard/PokemonCard";
 import "./pokemonListing.scss";
 
 const PokemonListing = () => {
@@ -8,7 +9,14 @@ const PokemonListing = () => {
 
   console.log(pokemons);
 
-  return <div>PokemonListing</div>;
+  return (
+    <div className="pokemon-listing-container">
+      {pokemons.map((pokemon: Pokemon, id: number) => {
+        console.log(pokemon);
+        return <PokemonCard key={id} {...pokemon}></PokemonCard>;
+      })}
+    </div>
+  );
 };
 
 export default PokemonListing;
