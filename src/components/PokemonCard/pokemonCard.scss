@@ -1,0 +1,32 @@
+@import "../../common/colors.scss";
+
+.single-card {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  box-shadow: 0px 15px 24px 0px rgba(66, 68, 90, 1);
+  transition: $transition;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 20px;
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    user-select: none;
+  }
+}
+
+.card-info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 20px;
+}
