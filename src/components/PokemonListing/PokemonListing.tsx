@@ -7,13 +7,15 @@ import "./pokemonListing.scss";
 const PokemonListing = () => {
   const pokemons = useAppSelector(getAllPokemons);
 
-  console.log(pokemons);
+  const flatPokemons = pokemons.flat();
+
+  console.log(flatPokemons);
+  // console.log(pokemons);
 
   return (
     <div className="pokemon-listing-container">
-      {pokemons.map((pokemon: Pokemon, id: number) => {
-        console.log(pokemon);
-        return <PokemonCard key={id} {...pokemon}></PokemonCard>;
+      {flatPokemons.map((pokemon: Pokemon) => {
+        return <PokemonCard key={pokemon.id} {...pokemon} />;
       })}
     </div>
   );

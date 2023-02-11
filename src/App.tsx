@@ -10,9 +10,19 @@ import data from "./assets/pokedex.json";
 function App() {
   const dispatch = useAppDispatch();
 
+  // useEffect(() => {
+
+  // }, []);
+
+  let initialized = false;
+
   useEffect(() => {
-    dispatch(addPokemons(data));
-  }, [dispatch]);
+    if (!initialized) {
+      initialized = true;
+
+      dispatch(addPokemons(data));
+    }
+  }, []);
 
   return (
     <>

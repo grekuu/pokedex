@@ -1,8 +1,8 @@
 import React from "react";
 import "./pokemonCard.scss";
 
-const PokemonCard = () => {
-  return <div>PokemonCard</div>;
+const PokemonCard = ({ id }: any) => {
+  return <div>{id}</div>;
 };
 
 export default PokemonCard;
