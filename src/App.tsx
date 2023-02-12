@@ -8,17 +8,17 @@ import { addPokemons } from "./redux/pokemonsSlice";
 import data from "./pokedex.json";
 
 function App() {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
-  let initialized = false;
+  // let initialized = false;
 
-  useEffect(() => {
-    if (!initialized) {
-      initialized = true;
+  // useEffect(() => {
+  //   if (!initialized) {
+  //     initialized = true;
 
-      dispatch(addPokemons(data));
-    }
-  }, []);
+  //     dispatch(addPokemons(data));
+  //   }
+  // }, []);
 
   return (
     <>

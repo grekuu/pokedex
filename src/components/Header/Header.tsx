@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { useAppSelector } from "../../redux/hooks";
-import { getAllPokemons } from "../../redux/pokemonsSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { addPokemons, getAllPokemons } from "../../redux/pokemonsSlice";
 import "./header.scss";
+import data from "../../pokedex.json";
 
 const Header = () => {
   const [filter, setFilter] = useState("");
 
+  const dispatch = useAppDispatch();
+
+  let initialized = false;
+
   useEffect(() => {
-    console.log(filter);
+    if (!initialized) {
+      initialized = true;
+
+      let filteredArray = data.filter((pokemon) =>
+        pokemon.name.english.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      dispatch(addPokemons(filteredArray));
+    }
   }, [filter]);
 
   return (

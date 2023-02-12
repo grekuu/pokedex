@@ -37,7 +37,7 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     addPokemons: (state, { payload }) => {
-      state.pokemons.push(payload);
+      state.pokemons = payload;
     },
   },
 });
