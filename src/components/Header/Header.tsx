@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { addPokemons, getAllPokemons } from "../../redux/pokemonsSlice";
 import "./header.scss";
 import data from "../../pokedex.json";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [filter, setFilter] = useState("");
@@ -25,7 +26,9 @@ const Header = () => {
 
   return (
     <div className="header">
-      <h2>Pokedex</h2>
+      <Link to={`/`} style={{ textDecoration: "none", color: "black" }}>
+        <h2>Pokedex</h2>
+      </Link>
       <input
         type="text"
         placeholder="Search..."
