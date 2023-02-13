@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./pokemonCard.scss";
 
 const PokemonCard = ({ id, name }: any) => {
@@ -12,15 +13,20 @@ const PokemonCard = ({ id, name }: any) => {
 
   return (
     <div className="single-card">
-      <img
-        src={`assets/images/${imgID}.png`}
-        alt={name.english}
-        loading="lazy"
-      />
-      <div className="card-info">
-        <div className="card-name">{name.english}</div>
-        <div className="card-id">{id}</div>
-      </div>
+      <Link
+        to={`/${name.english}`}
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <img
+          src={`assets/images/${imgID}.png`}
+          alt={name.english}
+          loading="lazy"
+        />
+        <div className="card-info">
+          <div className="card-name">{name.english}</div>
+          <div className="card-id">{id}</div>
+        </div>
+      </Link>
     </div>
   );
 };
