@@ -9,8 +9,6 @@ const PokemonListing = () => {
 
   const flatPokemons = pokemons.flat();
 
-  console.log(flatPokemons);
-
   return (
     <div className="pokemon-listing-container">
       {flatPokemons.map((pokemon: Pokemon) => {
