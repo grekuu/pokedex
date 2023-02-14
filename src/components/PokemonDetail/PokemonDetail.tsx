@@ -39,10 +39,48 @@ const PokemonDetail = () => {
       <div className="types">
         <h2>Type</h2>
         <div className="type-cards">
-          {pokemonDetail[0].type.map((singleType) => {
-            return <div className="type-card">{singleType}</div>;
+          {pokemonDetail[0].type.map((singleType, index) => {
+            return (
+              <div className="type-card" key={index}>
+                {singleType}
+              </div>
+            );
           })}
         </div>
+      </div>
+
+      <div className="stats">
+        <h2>Statistics</h2>
+        <div className="stat-name">Attack</div>
+        <div
+          className="stat-width"
+          style={{ width: `${pokemonDetail[0].base.Attack}%` }}
+        ></div>
+        <div className="stat-name">Defense</div>
+        <div
+          className="stat-width"
+          style={{ width: `${pokemonDetail[0].base.Defense}%` }}
+        ></div>
+        <div className="stat-name">HP</div>
+        <div
+          className="stat-width"
+          style={{ width: `${pokemonDetail[0].base.HP}%` }}
+        ></div>
+        <div className="stat-name">Sp. Attack</div>
+        <div
+          className="stat-width"
+          style={{ width: `${pokemonDetail[0].base["Sp. Attack"]}%` }}
+        ></div>
+        <div className="stat-name">Sp. Defence</div>
+        <div
+          className="stat-width"
+          style={{ width: `${pokemonDetail[0].base["Sp. Defense"]}%` }}
+        ></div>
+        <div className="stat-name">Speed</div>
+        <div
+          className="stat-width"
+          style={{ width: `${pokemonDetail[0].base.Speed}%` }}
+        ></div>
       </div>
     </div>
   );

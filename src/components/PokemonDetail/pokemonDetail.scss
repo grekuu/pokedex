@@ -40,4 +40,24 @@
     color: white;
     font-size: 20px;
   }
+
+  .stats {
+    margin: 0 auto;
+    width: 50vw;
+    margin-top: 20px;
+
+    h2 {
+      text-align: center;
+    }
+
+    .stat-name {
+      font-size: 18px;
+    }
+
+    .stat-width {
+      background-color: #616161;
+      height: 10px;
+      margin-bottom: 10px;
+    }
+  }
 }
