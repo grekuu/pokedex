@@ -79,7 +79,10 @@ const PokemonDetail = () => {
         <div className="stat-name">Speed</div>
         <div
           className="stat-width"
-          style={{ width: `${pokemonDetail[0].base.Speed}%` }}
+          style={{
+            width: `${pokemonDetail[0].base.Speed}%`,
+            marginBottom: "30px",
+          }}
         ></div>
       </div>
     </div>

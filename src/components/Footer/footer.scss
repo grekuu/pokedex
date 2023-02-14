@@ -1,0 +1,30 @@
+@import "../../common/colors.scss";
+
+.footer {
+  max-width: 100vw;
+  background-color: $primary-color;
+  color: white;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .footer-right {
+    font-size: 30px;
+    display: flex;
+    gap: 15px;
+
+    a {
+      color: inherit;
+    }
+
+    .footer-icon {
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        color: rgb(201, 201, 201);
+      }
+    }
+  }
+}
