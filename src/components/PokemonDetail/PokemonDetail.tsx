@@ -1,9 +1,12 @@
 import "./pokemonDetail.scss";
 import { useParams } from "react-router-dom";
 import data from "../../pokedex.json";
+import { useAppSelector } from "../../redux/hooks";
+import { getDarkMode } from "../../redux/pokemonsSlice";
 
 const PokemonDetail = () => {
   const { name } = useParams();
+  const darkMode = useAppSelector(getDarkMode);
 
   const pokemonDetail = data.filter((pokemon) =>
     pokemon.name.english.toLowerCase().includes(name!.toLowerCase())
@@ -22,7 +25,13 @@ const PokemonDetail = () => {
   }
 
   return (
-    <div className="pokemon-detail-container">
+    <div
+      className={
+        darkMode
+          ? "pokemon-detail-container dark-mode-container"
+          : "pokemon-detail-container"
+      }
+    >
       <div className="title">
         <h2>{pokemonDetail[0].name.english}</h2>
         <h2 className="id">#{imgStringID}</h2>
@@ -81,7 +90,6 @@ const PokemonDetail = () => {
           className="stat-width"
           style={{
             width: `${pokemonDetail[0].base.Speed}%`,
-            marginBottom: "30px",
           }}
         ></div>
       </div>
