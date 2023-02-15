@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { addPokemons, getAllPokemons } from "../../redux/pokemonsSlice";
+import {
+  addPokemons,
+  changeMode,
+  getDarkMode,
+} from "../../redux/pokemonsSlice";
 import "./header.scss";
 import data from "../../pokedex.json";
 import { Link } from "react-router-dom";
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 
 const Header = () => {
   const [filter, setFilter] = useState("");
 
   const dispatch = useAppDispatch();
+  const darkMode = useAppSelector(getDarkMode);
 
   let initialized = false;
 
@@ -26,14 +32,25 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Link to={`/`} style={{ textDecoration: "none", color: "black" }}>
-        <h2>Pokedex</h2>
-      </Link>
-      <input
-        type="text"
-        placeholder="Search..."
-        onChange={(e) => setFilter(e.target.value)}
-      />
+      <div className="header-left">
+        <Link to={`/`} style={{ textDecoration: "none", color: "black" }}>
+          <h2>Pokedex</h2>
+        </Link>
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={(e) => setFilter(e.target.value)}
+        />
+      </div>
+      <div className="header-right">
+        <button onClick={() => dispatch(changeMode(!darkMode))}>
+          {darkMode ? (
+            <BsFillSunFill className="change-theme-icon" />
+          ) : (
+            <BsFillMoonFill className="change-theme-icon" />
+          )}
+        </button>
+      </div>
     </div>
   );
 };

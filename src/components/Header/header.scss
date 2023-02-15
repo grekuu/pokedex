@@ -7,6 +7,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
 
   h2 {
     color: white;
@@ -16,7 +18,7 @@
   }
 
   input {
-    width: 30%;
+    width: 30vw;
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -24,6 +26,24 @@
 
     &:focus {
       outline: none;
+    }
+  }
+
+  .header-right > button {
+    background-color: $primary-color;
+    border: none;
+    width: auto;
+    height: auto;
+
+    .change-theme-icon {
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        color: rgb(197, 197, 197);
+      }
     }
   }
 }
