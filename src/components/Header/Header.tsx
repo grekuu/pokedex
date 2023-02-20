@@ -50,6 +50,14 @@ const Header = () => {
             <BsFillMoonFill className="change-theme-icon" />
           )}
         </button>
+        <li className="dropdown">
+          Language
+          <ul className="dropdown-menu">
+            <li className="dropdown-item-1">1</li>
+            <li className="dropdown-item-2">2</li>
+            <li className="dropdown-item-3">3</li>
+          </ul>
+        </li>
       </div>
     </div>
   );
