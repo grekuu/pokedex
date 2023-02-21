@@ -9,6 +9,7 @@ import "./header.scss";
 import data from "../../pokedex.json";
 import { Link } from "react-router-dom";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+import { MdLanguage } from "react-icons/md";
 
 const Header = () => {
   const [filter, setFilter] = useState("");
@@ -51,11 +52,15 @@ const Header = () => {
           )}
         </button>
         <li className="dropdown">
-          Language
+          <MdLanguage
+            className="change-theme-icon"
+            style={{ fontSize: "35px" }}
+          />
           <ul className="dropdown-menu">
-            <li className="dropdown-item-1">1</li>
-            <li className="dropdown-item-2">2</li>
-            <li className="dropdown-item-3">3</li>
+            <li className="dropdown-item-1 li">Chinese</li>
+            <li className="dropdown-item-2 li">English</li>
+            <li className="dropdown-item-3 li">French</li>
+            <li className="dropdown-item-4 li">Japanese</li>
           </ul>
         </li>
       </div>

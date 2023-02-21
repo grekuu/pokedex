@@ -29,34 +29,36 @@
     }
   }
 
+  .header-right {
+    display: flex;
+    gap: 15px;
+  }
+
   .header-right > button {
     background-color: $primary-color;
     border: none;
     width: auto;
     height: auto;
+  }
 
-    .change-theme-icon {
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
-      transition: $transition;
+  .change-theme-icon {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: $transition;
 
-      &:hover {
-        color: rgb(197, 197, 197);
-      }
+    &:hover {
+      color: rgb(197, 197, 197);
     }
   }
 
-  .dropdown {
-    width: 20%;
-    padding: 20px 40px;
+  .header-right .dropdown {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
-    background-color: white;
     position: relative;
     font-size: 15px;
+    padding-right: 100px;
 
     &:hover {
       cursor: pointer;
@@ -65,10 +67,6 @@
 
   .dropdown:hover > .dropdown-menu > li {
     display: block;
-  }
-
-  .dropdown:hover > .dropdown-menu > li:first-child {
-    border-top: 2px solid black;
   }
 
   .dropdown-menu {
@@ -92,15 +90,19 @@
 
   .dropdown-menu > .dropdown-item-1 {
     transform-origin: top center;
-    animation: translateX 300ms 60ms ease-in-out forwards;
+    animation: translateX 100ms 60ms ease-in-out forwards;
   }
   .dropdown-menu > .dropdown-item-2 {
     transform-origin: top center;
-    animation: translateX 300ms 120ms ease-in-out forwards;
+    animation: translateX 100ms 120ms ease-in-out forwards;
   }
   .dropdown-menu > .dropdown-item-3 {
     transform-origin: top center;
-    animation: translateX 300ms 180ms ease-in-out forwards;
+    animation: translateX 100ms 180ms ease-in-out forwards;
+  }
+  .dropdown-menu > .dropdown-item-4 {
+    transform-origin: top center;
+    animation: translateX 100ms 240ms ease-in-out forwards;
   }
 
   @keyframes translateX {
