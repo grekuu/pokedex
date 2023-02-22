@@ -2,11 +2,12 @@ import "./pokemonDetail.scss";
 import { useParams } from "react-router-dom";
 import data from "../../pokedex.json";
 import { useAppSelector } from "../../redux/hooks";
-import { getDarkMode } from "../../redux/pokemonsSlice";
+import { getDarkMode, getLanguage } from "../../redux/pokemonsSlice";
 
 const PokemonDetail = () => {
   const { name } = useParams();
   const darkMode = useAppSelector(getDarkMode);
+  const language = useAppSelector(getLanguage);
 
   const pokemonDetail = data.filter((pokemon) =>
     pokemon.name.english.toLowerCase().includes(name!.toLowerCase())
@@ -33,8 +34,8 @@ const PokemonDetail = () => {
       }
     >
       <div className="title">
-        <h2>{pokemonDetail[0].name.english}</h2>
-        <h2 className="id">#{imgStringID}</h2>
+        <h2>{(pokemonDetail[0].name as Record<string, string>)[language]}</h2>
+        <h2>#{imgStringID}</h2>
       </div>
 
       <div className="detail-image">

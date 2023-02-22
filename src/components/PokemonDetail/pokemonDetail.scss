@@ -5,13 +5,10 @@
   .title {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 20px;
     gap: 20px;
     font-size: 25px;
-
-    .id {
-      color: #616161;
-    }
   }
 
   .detail-image {

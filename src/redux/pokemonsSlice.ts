@@ -27,11 +27,13 @@ export interface Pokemon {
 interface PokemonsState {
   pokemons: Pokemon[];
   darkMode: boolean;
+  language: string;
 }
 
 const initialState: PokemonsState = {
   pokemons: [],
   darkMode: false,
+  language: "",
 };
 
 export const counterSlice = createSlice({
@@ -44,12 +46,16 @@ export const counterSlice = createSlice({
     changeMode: (state, { payload }) => {
       state.darkMode = payload;
     },
+    changeLanguage: (state, { payload }) => {
+      state.language = payload;
+    },
   },
 });
 
-export const { addPokemons, changeMode } = counterSlice.actions;
+export const { addPokemons, changeMode, changeLanguage } = counterSlice.actions;
 
 export const getAllPokemons = (state: RootState) => state.pokemons.pokemons;
 export const getDarkMode = (state: RootState) => state.pokemons.darkMode;
+export const getLanguage = (state: RootState) => state.pokemons.language;
 
 export default counterSlice.reducer;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   addPokemons,
+  changeLanguage,
   changeMode,
   getDarkMode,
 } from "../../redux/pokemonsSlice";
@@ -13,6 +14,7 @@ import { MdLanguage } from "react-icons/md";
 
 const Header = () => {
   const [filter, setFilter] = useState("");
+  const [language, setLanguage] = useState("english");
 
   const dispatch = useAppDispatch();
   const darkMode = useAppSelector(getDarkMode);
@@ -24,12 +26,15 @@ const Header = () => {
       initialized = true;
 
       let filteredArray = data.filter((pokemon) =>
-        pokemon.name.english.toLowerCase().includes(filter.toLowerCase())
+        (pokemon.name as Record<string, string>)[language]
+          .toLowerCase()
+          .includes(filter.toLowerCase())
       );
 
       dispatch(addPokemons(filteredArray));
+      dispatch(changeLanguage(language));
     }
-  }, [filter]);
+  }, [filter, language]);
 
   return (
     <div className="header">
@@ -57,10 +62,30 @@ const Header = () => {
             style={{ fontSize: "35px" }}
           />
           <ul className="dropdown-menu">
-            <li className="dropdown-item-1 li">Chinese</li>
-            <li className="dropdown-item-2 li">English</li>
-            <li className="dropdown-item-3 li">French</li>
-            <li className="dropdown-item-4 li">Japanese</li>
+            <li
+              className="dropdown-item-1 li"
+              onClick={() => setLanguage("chinese")}
+            >
+              Chinese
+            </li>
+            <li
+              className="dropdown-item-2 li"
+              onClick={() => setLanguage("english")}
+            >
+              English
+            </li>
+            <li
+              className="dropdown-item-3 li"
+              onClick={() => setLanguage("french")}
+            >
+              French
+            </li>
+            <li
+              className="dropdown-item-4 li"
+              onClick={() => setLanguage("japanese")}
+            >
+              Japanese
+            </li>
           </ul>
         </li>
       </div>
