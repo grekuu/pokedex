@@ -10,3 +10,10 @@
 .dark-mode-container {
   background-color: #616161;
 }
+
+@media only screen and (max-width: 768px) {
+  .pokemon-listing-container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}

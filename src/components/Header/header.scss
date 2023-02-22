@@ -8,7 +8,7 @@
   top: 0;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
   h2 {
     color: white;
@@ -58,7 +58,6 @@
     align-items: center;
     position: relative;
     font-size: 15px;
-    padding-right: 100px;
 
     &:hover {
       cursor: pointer;
@@ -67,6 +66,8 @@
 
   .dropdown:hover > .dropdown-menu > li {
     display: block;
+
+    width: 60px;
   }
 
   .dropdown-menu {
@@ -81,9 +82,10 @@
       padding: 10px 20px;
       font-size: 16px;
       opacity: 0;
+      transition: $transition;
 
       &:hover {
-        color: black;
+        background-color: rgb(197, 197, 197);
       }
     }
   }
@@ -117,6 +119,17 @@
     100% {
       opacity: 1;
       transform: translateX(0px);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 50vw;
     }
   }
 }

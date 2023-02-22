@@ -71,3 +71,11 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .pokemon-detail-container {
+    .detail-image > img {
+      width: 70%;
+    }
+  }
+}

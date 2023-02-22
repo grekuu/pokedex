@@ -49,13 +49,6 @@ const Header = () => {
         />
       </div>
       <div className="header-right">
-        <button onClick={() => dispatch(changeMode(!darkMode))}>
-          {darkMode ? (
-            <BsFillSunFill className="change-theme-icon" />
-          ) : (
-            <BsFillMoonFill className="change-theme-icon" />
-          )}
-        </button>
         <li className="dropdown">
           <MdLanguage
             className="change-theme-icon"
@@ -88,6 +81,13 @@ const Header = () => {
             </li>
           </ul>
         </li>
+        <button onClick={() => dispatch(changeMode(!darkMode))}>
+          {darkMode ? (
+            <BsFillSunFill className="change-theme-icon" />
+          ) : (
+            <BsFillMoonFill className="change-theme-icon" />
+          )}
+        </button>
       </div>
     </div>
   );

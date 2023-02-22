@@ -30,3 +30,9 @@
   font-weight: 700;
   font-size: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+  .single-card {
+    width: 70vw;
+  }
+}

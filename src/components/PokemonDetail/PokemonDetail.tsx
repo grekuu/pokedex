@@ -13,8 +13,6 @@ const PokemonDetail = () => {
     pokemon.name.english.toLowerCase().includes(name!.toLowerCase())
   );
 
-  console.log(pokemonDetail);
-
   let imgID = pokemonDetail[0].id;
 
   let imgStringID = imgID.toString();
