@@ -23,7 +23,7 @@ You will also see any lint errors in the console.
 
 
 ## Project status
-Project is: in progress.
+Project is: Finished
 
 ## Contact
 Created by @grekuu - feel free to contact me!
